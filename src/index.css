@@ -1,0 +1,362 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+/* ✅ Use Poppins everywhere */
+body {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 400;
+  background:
+    radial-gradient(800px 600px at 20% 10%, rgba(246, 177, 0, 0.08), rgba(255, 255, 255, 0)),
+    radial-gradient(1000px 800px at 80% 90%, rgba(251, 191, 36, 0.05), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, #FFFDF5, #FFFFFF);
+  color: #0f172a;
+  background-attachment: fixed;
+}
+
+/* ✅ Headings still Poppins (redundant but keeps weight clean) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif !important;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ✅ Links inherit color */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Page containers */
+#root>div,
+[class*="page-"],
+[class*="Page-"] {
+  background:
+    radial-gradient(1000px 700px at 10% 0%, rgba(246, 177, 0, 0.05), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, #FFFDF0, #FFFFFF);
+}
+
+/* Inputs and form controls */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+  font-family: 'Poppins', sans-serif !important;
+  background-color: #fff !important;
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+  outline: none !important;
+  margin: 4px 0 !important;
+}
+
+/* Card or surface backgrounds */
+[class*="card"] {
+  background: #FFFFFF !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Publish button styling */
+.publish-button {
+  font-family: 'Poppins', sans-serif !important;
+  width: 100% !important;
+  padding: 14px 24px !important;
+  background: linear-gradient(90deg, #FDE047 0%, #FACC15 100%) !important;
+  color: #000000 !important;
+  border: 2px solid #CA8A04 !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  margin: 20px 0 !important;
+}
+
+.publish-button:hover {
+  background: linear-gradient(90deg, #FACC15 0%, #FDE047 100%) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.publish-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Cancel button styling */
+.cancel-button {
+  background-color: #EF4444 !important;
+  border-color: #DC2626 !important;
+}
+
+/* --- Topbar Styling --- */
+.be-header {
+  background: #FFFFFF !important;
+  border-bottom: 2px solid #fbbf24 !important;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.be-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.be-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.be-navItem {
+  color: #0f172a;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.be-navItem:hover {
+  background: rgba(251, 191, 36, 0.1);
+}
+
+.be-navItem.is-active {
+  background: rgba(251, 191, 36, 0.2);
+  color: #b45309;
+  font-weight: 500;
+}
+
+.be-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.be-logoMark {
+  width: 56px;
+  /* increased from 40px */
+  height: 56px;
+  /* increased from 40px */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.be-logoImg {
+  width: 180px;
+  height: 104px;
+  object-fit: contain;
+}
+
+
+.be-brand {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #0f172a;
+}
+
+.be-tag {
+  font-size: 0.75rem;
+  color: #6B7280;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* --- Hero Banner Gradient --- */
+.hero-banner {
+  background:
+    radial-gradient(1200px 600px at 10% -20%, rgba(246, 177, 0, 0.18), rgba(255, 255, 255, 0)),
+    radial-gradient(1000px 520px at 90% -10%, rgba(246, 177, 0, 0.12), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, #FFFBEB, #FFFFFF) !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* ---------------- Responsive utilities ---------------- */
+:root {
+  --container-max: 1120px;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Legacy gutters */
+  --gutter-sm: 16px;
+  --gutter-md: 24px;
+  --gutter-lg: 32px;
+}
+
+.be-container-sm {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter-sm);
+}
+
+.be-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter-md);
+}
+
+/* Fluid Typography */
+.heading-responsive {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.1;
+}
+
+.subheading-responsive {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.text-responsive {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
+}
+
+/* Responsive Grid */
+.be-grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  grid-template-columns: 1fr;
+}
+
+.be-grid.cols-2 {
+  grid-template-columns: 1fr;
+}
+
+.be-grid.cols-3 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .be-grid.cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .be-grid.cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .be-grid.cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .be-grid.cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.grid-cols-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.stack-on-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .stack-on-mobile {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Display Helpers */
+.hide-mobile {
+  display: none;
+}
+
+.hide-tablet {
+  display: none;
+}
+
+.hide-desktop {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+
+  .hide-tablet {
+    display: none;
+  }
+
+  .hide-desktop {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hide-mobile {
+    display: block;
+  }
+
+  .hide-tablet {
+    display: block;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* small utilities */
+.text-center {
+  text-align: center;
+}
+
+.muted {
+  color: #6B7280;
+}
+
+
+/* Event card title override: use serif for titles */
+.be-event-title {
+  font-family: 'Caudex', serif !important;
+}
