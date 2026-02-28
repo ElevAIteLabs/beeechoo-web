@@ -36,6 +36,7 @@ import StudioDetails from './pages/StudioDetails';
 import Campaigns from './pages/Campaigns';
 import HostCreateCampaign from './pages/HostCreateCampaign';
 import MediaDetails from './pages/MediaDetails';
+import MagazineDetails from './pages/MagazineDetails';
 
 function Layout({
   openLoginModal,
@@ -90,17 +91,18 @@ export default function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/creators" element={<Creators />} />
             <Route path="/media" element={<Media />} />
+            <Route path="/media/category/:category" element={<Media />} />
             <Route path="/studios" element={<Studios />} />
             <Route path="/campaigns" element={<Campaigns />} />
             <Route path="/host/campaigns/new" element={<HostCreateCampaign />} />
 
 
-              <Route path="/studios/new" element={<NewStudio />} />
-              <Route path="/studios/:id" element={<StudioDetails />} />
-            // somewhere in your router
-<Route path="/become-creator" element={<BecomeCreator />} />
-<Route path="/creators/:id" element={<CreatorProfile />} />
-<Route path="/media/:id" element={<MediaDetails />} />
+            <Route path="/studios/new" element={<NewStudio />} />
+            <Route path="/studios/:id" element={<StudioDetails />} />
+            <Route path="/become-creator" element={<BecomeCreator />} />
+            <Route path="/creators/:id" element={<CreatorProfile />} />
+            <Route path="/media/:id" element={<MediaDetails />} />
+            <Route path="/media/magazine/:id" element={<MagazineDetails />} />
           </Route>
         </Route>
       </Routes>
